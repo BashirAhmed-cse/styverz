@@ -1,25 +1,25 @@
-import { FAQSection } from '@/components/FAQSection'
-import Hero from '@/components/Hero'
-import HeroLanding from '@/components/HeroLanding'
-import HostGallery from '@/components/HostGallery'
+import Hero from '@/components/Hero';
+import HeroLanding from '@/components/HeroLanding';
+import { Suspense } from 'react';
+import { LoadingFallback } from '@/components/LoadingFallback';
 
-import { HowWork } from '@/components/HowWork'
-import { SuccessStorySection } from '@/components/SuccessStorySection'
-import React from 'react'
+// Static components that don't need dynamic import for static export
+import { SuccessStorySection } from '@/components/SuccessStorySection';
+import { HowWork } from '@/components/HowWork';
+import { FAQSection } from '@/components/FAQSection';
+import HostGallery from '@/components/HostGallery';
 
-const Main = () => {
+export default function Main() {
   return (
-    <div className=''>
-      <Hero/>
-      
-        <SuccessStorySection/>
-        <HowWork/>
-        <HostGallery/>
-        <FAQSection/>
-        <HeroLanding/>
-     
+    <div className="overflow-hidden">
+      <Suspense fallback={<LoadingFallback />}>
+        <Hero />
+        <SuccessStorySection />
+        <HowWork />
+        <HostGallery />
+        <FAQSection />
+        <HeroLanding />
+      </Suspense>
     </div>
-  )
+  );
 }
-
-export default Main

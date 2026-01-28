@@ -247,20 +247,20 @@ export function HowWork() {
               whileTap="tap"
             >
               <Button
-                size="lg"
-                className="bg-gradient-to-r from-[#f15a26] to-[#ff7b42] hover:from-[#d14a1e] hover:to-[#e65a2e] text-white text-lg px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-semibold group"
-              >
-                <span className="flex items-center gap-3">
-                  এখনই শুরু করুন
-                  <motion.span
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 5 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <ArrowRight className="h-5 w-5" />
-                  </motion.span>
-                </span>
-              </Button>
+  size="lg"
+  className="hidden sm:inline-flex bg-gradient-to-r from-[#f15a26] to-[#ff7b42] hover:from-[#d14a1e] hover:to-[#e65a2e] text-white text-lg px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-semibold group"
+>
+  <span className="flex items-center gap-3">
+    এখনই শুরু করুন
+    <motion.span
+      initial={{ x: 0 }}
+      whileHover={{ x: 5 }}
+      transition={{ duration: 0.2 }}
+    >
+      <ArrowRight className="h-5 w-5" />
+    </motion.span>
+  </span>
+</Button>
             </motion.div>
 
             {/* Stats/Features */}

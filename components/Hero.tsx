@@ -207,11 +207,11 @@ export default function Hero() {
                 whileTap="tap"
               >
                 <Button
-                  size="lg"
-                  className="w-full sm:w-auto bg-gradient-to-r from-[#f15a26] to-[#ff7b42] hover:from-[#d14a1e] hover:to-[#e65a2e] text-white text-base sm:text-lg px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 rounded-full transition-all duration-300"
-                >
-                  <span className="font-semibold">বিস্তারিত জানুন</span>
-                </Button>
+  size="lg"
+  className="hidden sm:inline-flex w-full sm:w-auto bg-gradient-to-r from-[#f15a26] to-[#ff7b42] hover:from-[#d14a1e] hover:to-[#e65a2e] text-white text-base sm:text-lg px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 rounded-full transition-all duration-300"
+>
+  <span className="font-semibold">বিস্তারিত জানুন</span>
+</Button>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -253,9 +253,9 @@ export default function Hero() {
               <form className="space-y-3 sm:space-y-4 md:space-y-5">
                 <div className="space-y-3 sm:space-y-4">
                   {[
-                    { placeholder: "আপনার নাম", icon: "👤", type: "text" },
+                    { placeholder: "নাম", icon: "👤", type: "text" },
                     { placeholder: "ফোন নম্বর", icon: "📱", type: "tel" },
-                    { placeholder: "ইমেইল এড্রেস", icon: "✉️", type: "email" },
+                    { placeholder: "ইমেইল", icon: "✉️", type: "email" },
                     { placeholder: "লোকেশন", icon: "📍", type: "text" }
                   ].map((field, index) => (
                     <motion.div
