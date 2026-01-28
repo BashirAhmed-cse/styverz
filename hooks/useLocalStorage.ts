@@ -35,7 +35,6 @@ export const useLocalStorage = () => {
       icon: 'info',
       allowOutsideClick: false,
       allowEscapeKey: false,
-      allowEnterKey: false,
       showConfirmButton: false,
       didOpen: () => {
         Swal.showLoading();
