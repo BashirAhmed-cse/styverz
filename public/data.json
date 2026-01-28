@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Bashir",
+    "phone": "01746383096",
+    "email": "wetifat334@lawicon.com",
+    "location": "Dhaka",
+    "propertyType": "shared",
+    "timestamp": "2026-01-28T11:41:47.158Z"
+  },
+  {
+    "name": "Bashir Ahmed",
+    "phone": "01679317443",
+    "email": "bashir@gmail.com",
+    "location": "Dhaka",
+    "propertyType": "single-room",
+    "timestamp": "2026-01-28T11:42:24.324Z"
+  }
+]

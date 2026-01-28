@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/select";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import HeroForm from "./HeroForm";
 
 export default function HeroLanding() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -175,63 +176,7 @@ export default function HeroLanding() {
             transition: { type: "spring", stiffness: 300 }
           }}
         >
-          <div className="bg-white rounded-[30px] shadow-2xl border border-orange-200 p-8 md:p-10 w-full">
-            <motion.h3 
-              className="text-xl md:text-2xl font-bold text-center mb-8 text-gray-800"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-            >
-              ফ্রি কনসালটেশন নিন, আর্নিং শুরু করুন
-            </motion.h3>
-
-            <form className="space-y-4">
-              {["নাম", "ফোন নাম্বার", "ইমেইল", "লোকেশন"].map((placeholder, index) => (
-                <motion.div
-                  key={placeholder}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.7 + index * 0.1 }}
-                >
-                  <Input
-                    placeholder={placeholder}
-                    className="h-12 bg-white border-gray-300 rounded-xl focus:ring-[#F15A24] transition-all duration-200"
-                    whileFocus={{ scale: 1.02 }}
-                  />
-                </motion.div>
-              ))}
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.1 }}
-              >
-                <Select>
-                  <SelectTrigger className="h-12 bg-white border-gray-300 rounded-xl text-gray-500">
-                    <SelectValue placeholder="প্রপার্টি ধরন" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="full">পুরো অ্যাপার্টমেন্ট</SelectItem>
-                    <SelectItem value="room">সিঙ্গেল রুম</SelectItem>
-                  </SelectContent>
-                </Select>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2 }}
-                whileHover="hover"
-                whileTap="tap"
-              >
-                <motion.div variants={buttonVariants}>
-                  <Button className="w-full h-14 bg-[#F15A24] hover:bg-[#D64A1D] text-white text-xl font-bold rounded-2xl mt-4 shadow-lg shadow-orange-200">
-                    সাবমিট
-                  </Button>
-                </motion.div>
-              </motion.div>
-            </form>
-          </div>
+          <HeroForm/>
         </motion.div>
       </motion.div>
     </section>
