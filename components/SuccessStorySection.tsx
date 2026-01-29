@@ -1,7 +1,10 @@
 // components/SuccessStorySection.tsx
-'use client';
+"use client";
 
-import { Play, CheckCircle, TrendingUp, Shield, DollarSign, BarChart } from "lucide-react";
+import {
+  Play,
+  CircleCheckBig,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
@@ -11,17 +14,7 @@ export function SuccessStorySection() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
-  };
+
 
   const videoVariants = {
     hidden: { opacity: 0, scale: 0.9, y: 50 },
@@ -31,56 +24,21 @@ export function SuccessStorySection() {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: [0.22, 1, 0.36, 1]
-      }
-    }
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
   };
 
   const stepItemVariants = {
-    hidden: { opacity: 0, x: -20 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.22, 1, 0.36, 1]
-      }
-    }
-  };
-
-  const numberVariants = {
-    hidden: { scale: 0, rotate: -90 },
-    visible: {
-      scale: 1,
-      rotate: 0,
-      transition: {
-        type: "spring",
-        stiffness: 200,
-        damping: 15
-      }
-    }
-  };
-
-  const iconVariants = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 200,
-        damping: 15
-      }
+        ease: [0.22, 1, 0.36, 1],
+      },
     },
-    hover: {
-      scale: 1.15,
-      rotate: 5,
-      transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 10
-      }
-    }
   };
 
   const floatingAnimation = {
@@ -89,275 +47,189 @@ export function SuccessStorySection() {
       transition: {
         duration: 2.5,
         repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
+        ease: "easeInOut",
+      },
+    },
   };
 
   const steps = [
     {
-      number: "01",
-      title: "আপনার প্রপার্টির সম্ভাবনা বুঝে নিন",
-      description: "প্রতিটি প্রপার্টির আয় ক্ষমতা আলাদা, যা নির্ভর করে লোকেশন, প্রপার্টির ধরন, রুম সংখ্যা এবং আশেপাশের চাহিদার উপর। Stayverz-এর ফ্রি কনসালটেশন সেশনে আমরা এই বিষয়গুলো বিশ্লেষণ করি এবং অনুমান নয়, বাস্তব মার্কেট ডেটার উপর ভিত্তি করে আপনাকে জানাই আপনার প্রপার্টি থেকে মাসে কত আয় করা সম্ভব।",
-      icon: TrendingUp,
-      color: "bg-gradient-to-br from-orange-500 to-amber-500"
+      number: "০১",
+      title: "আপনার প্রপার্টির সম্ভাবনা বুঝে নিন।",
+      description:
+        "প্রতিটি প্রপার্টির আয় ক্ষমতা আলাদা, যা নির্ভর করে লোকেশন, প্রপার্টির ধরন, রুম সংখ্যা এবং আশেপাশের চাহিদার উপর। Stayverz-এর ফ্রি কনসালটেশন সেশনে আমরা এই বিষয়গুলো বিশ্লেষণ করি এবং অনুমান নয়, বাস্তব মার্কেট ডেটার উপর ভিত্তি করে আপনাকে জানাই আপনার প্রপার্টি থেকে মাসে কত আয় করা সম্ভব। এতে করে শুরুতেই আপনার একটি পরিষ্কার ধারণা তৈরি হয়।",
     },
     {
-      number: "02",
-      title: "প্রফেশনাল লিস্টিং ও সঠিক প্রাইসিং",
-      description: "Stayverz আপনার প্রপার্টির জন্য আকর্ষণীয় লিস্টিং তৈরি করে, মানসম্মত ছবি ব্যবহার করে এবং চাহিদা, সিজন ও বুকিং ট্রেন্ড অনুযায়ী ভাড়া নির্ধারণ করে। এর ফলে আপনার প্রপার্টি কম দামে নয়, বরং সঠিক সময়ে সঠিক দামে বুক হয়।",
-      icon: DollarSign,
-      color: "bg-gradient-to-br from-blue-500 to-cyan-500"
+      number: "০২",
+      title: "প্রফেশনাল লিস্টিং ও সঠিক প্রাইসিং।",
+      description:
+        "অনেক হোস্ট নিজেরা ভাড়া দিতে গিয়ে বাজারের তুলনায় কম ভাড়ায় আটকে যান বা সারা বছর একই ভাড়া ধরে রাখেন। Stayverz আপনার প্রপার্টির জন্য আকর্ষণীয় লিস্টিং তৈরি করে, মানসম্মত ছবি ব্যবহার করে এবং চাহিদা, সিজন ও বুকিং ট্রেন্ড অনুযায়ী ভাড়া নির্ধারণ করে। এর ফলে আপনার প্রপার্টি কম দামে নয়, বরং সঠিক সময়ে সঠিক দামে বুক হয়।",
     },
     {
-      number: "03",
-      title: "ফ্রি মার্কেটিং ও বুকিং ব্যবস্থাপনা",
-      description: "Stayverz-এর সবচেয়ে বড় সুবিধা হলো—আমরা সম্পূর্ণ মার্কেটিং ও বুকিং ব্যবস্থাপনা নিজেরা করি। আপনার প্রপার্টির প্রচার, গেস্টের খোঁজ, বুকিং কনফার্মেশন এবং গেস্ট সাপোর্ট—সবকিছু আমাদের টিম সামলায়।",
-      icon: BarChart,
-      color: "bg-gradient-to-br from-green-500 to-emerald-500"
+      number: "০৩",
+      title: "ফ্রি মার্কেটিং ও বুকিং ব্যবস্থাপনা।",
+      description:
+        "Stayverz-এর সবচেয়ে বড় সুবিধা হলো—আমরা সম্পূর্ণ মার্কেটিং ও বুকিং ব্যবস্থাপনা নিজেরা করি। আপনার প্রপার্টির প্রচার, গেস্টের খোঁজ, বুকিং কনফার্মেশন এবং গেস্ট সাপোর্ট—সবকিছু আমাদের টিম সামলায়। এতে করে আপনাকে প্রতিদিন ফোন ধরা, মেসেজের উত্তর দেওয়া বা গেস্ট নিয়ে দুশ্চিন্তা করতে হয় না, অথচ আপনার বুকিং চলতে থাকে নিয়মিতভাবে।",
     },
     {
-      number: "04",
-      title: "প্রপার্টি নিরাপত্তা",
-      description: "গেস্ট যাচাই, স্পষ্ট নিয়ম-কানুন এবং প্রয়োজন হলে দ্রুত সাপোর্ট—এই সবকিছুর মাধ্যমে আপনার প্রপার্টি নিরাপদভাবে ভাড়া দেওয়া নিশ্চিত করা হয়। এর ফলে আপনি নিশ্চিন্তে আপনার প্রপার্টি Stayverz-এর সাথে দিতে পারেন।",
-      icon: Shield,
-      color: "bg-gradient-to-br from-purple-500 to-pink-500"
+      number: "০৪",
+      title: "প্রপার্টি নিরাপত্তা।",
+      description:
+        "অনেক প্রপার্টি মালিকের প্রধান দুশ্চিন্তা থাকে নিরাপত্তা নিয়ে। Stayverz-এ আমরা এই বিষয়টিকে সর্বোচ্চ গুরুত্ব দিই। গেস্ট যাচাই, স্পষ্ট নিয়ম-কানুন এবং প্রয়োজন হলে দ্রুত সাপোর্ট—এই সবকিছুর মাধ্যমে আপনার প্রপার্টি নিরাপদভাবে ভাড়া দেওয়া নিশ্চিত করা হয়। এর ফলে আপনি নিশ্চিন্তে আপনার প্রপার্টি Stayverz-এর সাথে দিতে পারেন।",
     },
     {
-      number: "05",
-      title: "লেনদেনের স্বচ্ছতা",
-      description: "Stayverz-এর সাথে কাজ করলে আপনার আয় পুরোপুরি স্বচ্ছ থাকে। আপনি সব সময় স্পষ্টভাবে জানতে পারেন আপনার প্রপার্টিতে কত বুকিং হয়েছে, সেই বুকিং থেকে মোট কত আয় এসেছে এবং কোন সময়ে আপনার এলাকায় গেস্টদের চাহিদা বেশি থাকে।",
-      icon: CheckCircle,
-      color: "bg-gradient-to-br from-red-500 to-rose-500"
-    }
+      number: "০৫",
+      title: "লেনদেনের স্বচ্ছতা। ",
+      description:
+        "Stayverz-এর সাথে কাজ করলে আপনার আয় পুরোপুরি স্বচ্ছ থাকে। আপনি সব সময় স্পষ্টভাবে জানতে পারেন আপনার প্রপার্টিতে কত বুকিং হয়েছে, সেই বুকিং থেকে মোট কত আয় এসেছে এবং কোন সময়ে আপনার এলাকায় গেস্টদের চাহিদা বেশি থাকে। এই তথ্যগুলো বিশ্লেষণ করে আমরা ভবিষ্যতে কীভাবে আপনার আয় আরও বাড়ানো যায় সে বিষয়ে পরামর্শ দিই, যাতে আপনার আয় পরিকল্পিতভাবে বৃদ্ধি পায় এবং স্থায়ী হয়।",
+    },
   ];
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-24 bg-gradient-to-b from-white via-gray-50/30 to-white">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-        
-        {/* Video Section */}
-        <motion.div 
+    <section ref={sectionRef} className="bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16 xl:py-16 max-w-6xl">
+        {/* Video Section - EXACTLY THE SAME */}
+        <motion.div
           variants={videoVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           className="mb-20"
         >
           <div className="relative aspect-video max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl">
-            {/* Video Thumbnail */}
-            <div className="absolute inset-0 bg-gradient-to-br from-green-600 to-emerald-800">
-              {/* Floating Elements */}
+            {/* Thumbnail Image */}
+            <div className="absolute inset-0">
+              <img
+                src="/thumnail.png"
+                alt="Stayverz Success Story"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+
+              {/* Floating Elements (optional, can be removed if not needed) */}
               <div className="absolute top-6 left-6 w-8 h-8 bg-white/20 rounded-full" />
               <div className="absolute top-10 right-10 w-6 h-6 bg-white/15 rounded-full" />
               <div className="absolute bottom-8 left-10 w-10 h-10 bg-white/10 rounded-full" />
-              
-              {/* Content Overlay */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8 z-10">
-                <div className="text-center space-y-6 max-w-2xl">
-                  <motion.h3 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ delay: 0.3, duration: 0.6 }}
-                    className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight"
+            </div>
+
+            {/* Play Button Overlay */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+              <div className="text-center space-y-6 max-w-2xl">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                  <motion.div
+                    variants={floatingAnimation}
+                    animate="animate"
+                    className="relative group"
                   >
-                    দেখুন কিভাবে ১০০০+ হোস্ট Stayverz এর সাথে আয় করছেন
-                  </motion.h3>
-                  
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-                    <motion.div 
-                      variants={floatingAnimation}
-                      animate="animate"
-                      className="relative group"
+                    <motion.button
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-full flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]"
                     >
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-full flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]"
-                      >
-                        <Play className="w-10 h-10 sm:w-12 sm:h-12 text-emerald-600 fill-emerald-600" />
-                      </motion.button>
-                      <div className="absolute inset-0 bg-white/30 rounded-full animate-ping group-hover:animate-none"></div>
-                      <div className="absolute -inset-4 bg-white/10 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-                    </motion.div>
-                    
-                    <motion.div
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
-                      transition={{ delay: 0.5, duration: 0.5 }}
-                      className="space-y-2 text-center sm:text-left"
-                    >
-                      <span className="text-lg md:text-xl font-medium block">
-                        ভিডিওটি দেখুন
-                      </span>
-                      <span className="text-sm text-white/80 block">
-                        ২:৪৫ মিনিট
-                      </span>
-                    </motion.div>
-                  </div>
+                      <Play className="w-10 h-10 sm:w-12 sm:h-12 text-emerald-600 fill-emerald-600" />
+                    </motion.button>
+                    <div className="absolute inset-0 bg-white/30 rounded-full animate-ping group-hover:animate-none"></div>
+                    <div className="absolute -inset-4 bg-white/10 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                  </motion.div>
                 </div>
               </div>
-              
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
             </div>
           </div>
         </motion.div>
 
-        {/* Steps Section - Improved YouTube-like Design */}
-        <div className="space-y-16">
+        {/* Main Content Section - TEXT EXACTLY THE SAME */}
+        <div className="">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="text-center mb-12"
+            className="mb-8"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Stayverz-এর ৫-স্টেপ সফলতার পথ
+              কীভাবে এবং কেনো Stayverz এর সাথে আপনি আয় করবেন?
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              সহজ এবং স্বচ্ছ প্রক্রিয়ায় কিভাবে আমরা হোস্টদের মাসে ১ লক্ষ+ টাকা আয় করতে সাহায্য করছি
+            <p className="text-lg text-gray-800 font-bold">
+              আপনার যদি একটি রুম, ফ্ল্যাট বা বাড়ি থাকে, সেটি শুধু থাকার জায়গা
+              নয়—সঠিক ব্যবস্থাপনায় এটি হতে পারে আপনার নিয়মিত মাসিক আয়ের উৎস।
+              Stayverz ইতিমধ্যেই এমন অনেক হোস্টের সাথে কাজ করছে যারা আগে কম আয়
+              করতেন, আর এখন তাদের প্রপার্টি থেকে নিয়মিত বড় অংকের আয় পাচ্ছেন।
             </p>
           </motion.div>
 
-          {/* Steps Grid */}
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 md:-translate-x-1/2 bg-gradient-to-b from-orange-500 via-blue-500 to-green-500 hidden md:block" />
-            
-            <div className="space-y-12">
-              {steps.map((step, index) => {
-                const Icon = step.icon;
-                const isEven = index % 2 === 0;
-                
-                return (
-                  <motion.div
-                    key={index}
-                    variants={stepItemVariants}
-                    initial="hidden"
-                    animate={isInView ? "visible" : "hidden"}
-                    transition={{ delay: 0.8 + index * 0.15 }}
-                    className={`relative group ${
-                      isEven ? 'md:pr-1/2' : 'md:pl-1/2 md:ml-auto'
-                    }`}
-                  >
-                    {/* Timeline Node */}
-                    <div className={`absolute top-6 left-0 md:left-1/2 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2 z-10 border-4 border-white shadow-lg ${
-                      isEven ? 'md:left-1/2' : 'md:right-1/2 md:left-auto md:translate-x-1/2'
-                    }`}>
-                      <motion.div
-                        variants={numberVariants}
-                        className="w-full h-full rounded-full flex items-center justify-center"
-                        style={{ background: step.color }}
-                        whileHover={{ scale: 1.1 }}
-                      >
-                        <span className="text-gray-500 font-bold text-lg md:text-xl">
-                          {step.number}
-                        </span>
-                      </motion.div>
-                    </div>
-
-                    {/* Step Card */}
-                    <div className={`ml-16 md:ml-0 bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-[1.02] border border-gray-100 ${
-                      isEven ? 'md:mr-8' : 'md:ml-8'
-                    }`}>
-                      <div className="flex items-start gap-4">
-                        <motion.div
-                          variants={iconVariants}
-                          whileHover="hover"
-                          className={`flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center`}
-                          style={{ background: step.color }}
-                        >
-                          <Icon className="w-7 h-7 text-white" />
-                        </motion.div>
-                        
-                        <div className="flex-1">
-                          <motion.h3
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                            transition={{ delay: 0.9 + index * 0.15 }}
-                            className="text-xl md:text-2xl font-bold text-gray-900 mb-3"
-                          >
-                            {step.title}
-                          </motion.h3>
-                          
-                          <motion.p
-                            initial={{ opacity: 0 }}
-                            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-                            transition={{ delay: 1 + index * 0.15, duration: 0.5 }}
-                            className="text-gray-600 leading-relaxed text-base md:text-lg"
-                          >
-                            {step.description}
-                          </motion.p>
-                          
-                          {/* Progress Indicator */}
-                          <motion.div 
-                            initial={{ width: 0 }}
-                            animate={isInView ? { width: `${(index + 1) * 20}%` } : { width: 0 }}
-                            transition={{ delay: 1.1 + index * 0.15, duration: 0.8, ease: "easeOut" }}
-                            className="mt-6 h-1.5 rounded-full bg-gradient-to-r from-gray-200 to-gray-200 overflow-hidden"
-                          >
-                            <div 
-                              className="h-full rounded-full"
-                              style={{ 
-                                background: step.color,
-                                width: `${(index + 1) * 20}%`
-                              }}
-                            />
-                          </motion.div>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
+          {/* Steps Section - UPDATED TO MATCH YOUR REQUESTED STYLE */}
+          <div className="space-y-6">
+            {steps.map((step, index) => (
+              <motion.div
+                key={index}
+                variants={stepItemVariants}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                transition={{ delay: 0.8 + index * 0.1 }}
+                className=""
+              >
+                <div className="flex items-start gap-2">
+                  <CircleCheckBig className="text-orange-500 w-6 h-6 font-bold flex-shrink-0 mt-1" />
+                  <div className="text-gray-700 text-lg leading-relaxed">
+                    <span className="font-bold text-gray-900">
+                      স্টেপ {step.number}: {step.title}
+                    </span>{" "}
+                    {step.description}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
 
-        {/* Conclusion & CTA Section */}
-        <motion.div 
+        {/* Bottom Text Section - EXACTLY THE SAME */}
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ delay: 1.8, duration: 0.8 }}
-          className="mt-20 md:mt-24 space-y-8"
+          className="mt-6"
         >
-          <div className="text-center space-y-6 max-w-3xl mx-auto">
-            <motion.p 
+          <div className="max-w-6xl mx-auto">
+            <motion.p
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ delay: 2, duration: 0.6 }}
-              className="text-lg md:text-xl text-gray-700 leading-relaxed"
+              className="text-lg md:text-xl text-gray-700 leading-relaxed font-bold"
             >
               সব প্রপার্টি থেকেই এক রকম আয় হয় না, তবে সঠিক গাইডেন্স পেলে অনেক
               প্রপার্টিই মাসে লক্ষাধিক টাকা আয়ের সম্ভাবনা রাখে। তাই অনুমান বা
               শোনা কথার উপর নির্ভর না করে বাস্তব হিসাব জানার সবচেয়ে ভালো উপায়
-              হলো কথা বলা।
+              হলো কথা বলা। আপনি চাইলে আজই Stayverz-এর ফ্রি কনসালটেশন সেশন নিতে
+              পারেন, যেখানে কোনো ফি নেই, কোনো বাধ্যবাধকতা নেই—শুধু আপনার
+              প্রপার্টির জন্য সৎ ও বাস্তব পরামর্শ।
             </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-              transition={{ delay: 2.2, type: "spring", stiffness: 200, damping: 15 }}
-              className="inline-block bg-gradient-to-r from-orange-500/10 to-amber-500/10 backdrop-blur-sm rounded-2xl p-6 border border-orange-200"
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ delay: 2.2, duration: 0.6 }}
+              className="text-lg md:text-xl text-gray-700 leading-relaxed font-bold mt-5"
             >
-              <h3 className="text-xl md:text-2xl font-bold text-gray-900">
-                আপনার প্রপার্টি নিয়ে কথা বলি। এটি হতে পারে আপনার নিয়মিত আয়ের
-                পরবর্তী বড় সিদ্ধান্ত।
-              </h3>
-            </motion.div>
+              আপনার প্রপার্টি নিয়ে কথা বলি। এটি হতে পারে আপনার নিয়মিত আয়ের
+              পরবর্তী বড় সিদ্ধান্ত।
+            </motion.p>
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Button - EXACTLY THE SAME */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-            transition={{ delay: 2.4, type: "spring", stiffness: 200, damping: 15 }}
-            className="flex justify-center"
+            animate={
+              isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+            }
+            transition={{
+              delay: 2.4,
+              type: "spring",
+              stiffness: 200,
+              damping: 15,
+            }}
+            className="flex justify-center mt-8"
           >
             <motion.div
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
-                boxShadow: "0 25px 50px -12px rgba(241, 90, 38, 0.4)"
+                boxShadow: "0 25px 50px -12px rgba(241, 90, 38, 0.4)",
               }}
               whileTap={{ scale: 0.95 }}
             >
@@ -368,7 +240,11 @@ export function SuccessStorySection() {
                 <span className="flex items-center gap-3">
                   <motion.span
                     animate={{ rotate: [0, 10, -10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      repeatDelay: 3,
+                    }}
                     className="inline-block"
                   >
                     💬

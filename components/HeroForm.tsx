@@ -110,7 +110,7 @@ export default function HeroForm({ animationVariants }: HeroFormProps) {
       <motion.div 
         variants={floatingAnimation}
         animate="animate"
-        className="absolute -top-4 -right-4 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-orange-200 rounded-full blur-xl opacity-30 md:opacity-50"
+        className="absolute -top-4 -right-4 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24  bg-orange-200 rounded-full blur-xl opacity-30 md:opacity-50"
       />
       <motion.div 
         variants={floatingAnimation}
@@ -119,7 +119,7 @@ export default function HeroForm({ animationVariants }: HeroFormProps) {
         className="absolute -bottom-4 -left-4 w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 bg-blue-200 rounded-full blur-xl opacity-20 md:opacity-30"
       />
       
-      <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl md:shadow-2xl border border-orange-100 p-4 sm:p-6 md:p-8 lg:p-10 relative z-10">
+      <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl md:shadow-2xl border border-orange-500 p-4 sm:p-6 md:p-8 lg:p-10 relative z-10">
         {/* Form Header */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
@@ -177,7 +177,7 @@ export default function HeroForm({ animationVariants }: HeroFormProps) {
               <motion.div whileHover={{ scale: 1.02 }}>
                 <SelectTrigger className="h-10 sm:h-11 md:h-12 text-sm sm:text-base pl-10 sm:pl-12 border-gray-300 focus:border-[#f15a26] focus:ring-[#f15a26] rounded-lg sm:rounded-xl transition-all duration-200">
                   <div className="absolute left-3 sm:left-4 text-gray-400">🏠</div>
-                  <SelectValue placeholder="প্রপার্টি ধরন নির্বাচন করুন" />
+                  <SelectValue placeholder="প্রপার্টি ধরন" />
                 </SelectTrigger>
               </motion.div>
               <SelectContent className="text-sm sm:text-base">
@@ -212,7 +212,7 @@ export default function HeroForm({ animationVariants }: HeroFormProps) {
                     সাবমিট হচ্ছে...
                   </>
                 ) : (
-                  <span className="font-semibold">সাবমিট করুন</span>
+                  <span className="font-semibold">সাবমিট</span>
                 )}
               </Button>
             </motion.div>

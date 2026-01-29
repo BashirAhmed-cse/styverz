@@ -3,13 +3,13 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import Script from "next/script";
 
-// Use Inter font for better performance with static export
+// Use Inter font for English text
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   preload: true,
+  variable: '--font-inter',
 });
 
 export const metadata: Metadata = {
@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="bn" className="scroll-smooth">
       <head>
         {/* Preload critical resources */}
         <link 
@@ -44,25 +44,12 @@ export default function RootLayout({
         {/* Add viewport for better mobile performance */}
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       </head>
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.variable} antialiased`}>
         <Header />
         <main className="min-h-screen">
           {children}
         </main>
         <Footer />
-        {/* Add performance monitoring script if needed */}
-        <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX');
-          `}
-        </Script>
       </body>
     </html>
   );

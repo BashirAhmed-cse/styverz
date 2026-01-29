@@ -81,7 +81,7 @@ const Header = () => {
         </div> */}
 
         {/* Mobile Menu Button */}
-        <button
+        {/* <button
           className="sm:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors"
           onClick={() => setIsMobileMenuOpen(true)}
           aria-label="Open menu"
@@ -89,7 +89,7 @@ const Header = () => {
           <svg className="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-        </button>
+        </button> */}
       </motion.header>
 
       {/* Simple Mobile Menu */}
